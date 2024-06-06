@@ -26,8 +26,8 @@ jobs:
     - name: Run build
       run: |
         python build.py
-    if: github.ref == 'refs/heads/main'
     - name: Update grid
+      if: github.ref == 'refs/heads/main'
       run: |
         git add grid_image.png
         git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
