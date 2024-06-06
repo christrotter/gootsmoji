@@ -3,7 +3,7 @@ from PIL import Image
 
 # copilot generated basically all of this code
 
-image_source_path = '../goots'
+image_source_path = './goots'
 
 # Get a list of all image files in the image
 image_files = [f for f in os.listdir(image_source_path) if f.endswith(('.png'))]
