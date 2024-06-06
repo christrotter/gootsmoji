@@ -4,7 +4,6 @@ on:
   push:
     branches: [ "main" ]
   pull_request:
-    branches: [ "main" ]
 
 permissions:
   contents: write
@@ -27,6 +26,7 @@ jobs:
     - name: Run build
       run: |
         python build.py
+    if: github.ref == 'refs/heads/main'
     - name: Update grid
       run: |
         git add grid_image.png
