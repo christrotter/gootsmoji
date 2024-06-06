@@ -16,7 +16,7 @@ for image_file in image_files:
     print(image_file)
     image_path = os.path.join(image_source_path, image_file)
     print("image path: ", image_path)
-    html += f'<img src="{image_path}" alt="{image_file}"> \n'
+    html += f'<img src="{image_path}" alt="{image_file}">'
 html += '</body></html>'
 
 # Open readme.md in read mode and read the content
