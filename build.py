@@ -12,7 +12,6 @@ import subprocess
 
 from PIL import Image
 
-
 # IMAGE_SOURCE_DIR is the directory to list Goots images from.
 IMAGE_SOURCE_DIR = "./goots/"
 
@@ -31,7 +30,7 @@ GAP = 12
 
 
 def main():
-    """Generate the grid."""
+    """Generate the grid for the readme."""
 
     # Get a list of all image files in the image.
     image_files = [f for f in os.listdir(IMAGE_SOURCE_DIR) if f.endswith(".png")]
@@ -63,7 +62,6 @@ def main():
     # Compress using optiping if installed.
     if shutil.which("optipng"):
         subprocess.run(["optipng", "-o9", OUTPUT_FILENAME], check=True)
-
 
 if __name__ == "__main__":
     main()
