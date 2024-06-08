@@ -27,7 +27,14 @@ jobs:
       run: |
         python build.py
     - name: Update grid
+      - uses: dorny/paths-filter@v3
+        id: filter
+        with:
+          filters: |
+            grid_image:
+              - 'grid_image.png'
       if: github.ref == 'refs/heads/main'
+      if: steps.changes.outputs.grid_image == 'true'
       run: |
         git add grid_image.png
         git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
