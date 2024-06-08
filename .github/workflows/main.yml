@@ -27,7 +27,7 @@ jobs:
       run: |
         python build.py
     - name: Update grid
-      - uses: dorny/paths-filter@v3
+      uses: dorny/paths-filter@v3
         id: filter
         with:
           filters: |
