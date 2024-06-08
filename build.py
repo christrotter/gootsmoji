@@ -23,6 +23,12 @@ OUTPUT_FILENAME = "grid_image.png"
 THUMBNAIL_WIDTH = 128
 THUMBNAIL_HEIGHT = 128
 
+# MARGIN is the amount of margin to leave around the geets.
+MARGIN = 12
+
+# GAP is the space between geets in the grid.
+GAP = 12
+
 
 def main():
     """Generate the grid."""
@@ -36,8 +42,8 @@ def main():
     num_rows = (len(image_files) + num_columns - 1) // num_columns
 
     # Create a new image with the size of the grid.
-    grid_width = num_columns * THUMBNAIL_WIDTH
-    grid_height = num_rows * THUMBNAIL_HEIGHT
+    grid_width = num_columns * (THUMBNAIL_WIDTH + GAP) + (2 * MARGIN) - GAP
+    grid_height = num_rows * (THUMBNAIL_HEIGHT + GAP) + (2 * MARGIN) - GAP
     grid_image = Image.new("RGB", (grid_width, grid_height))
 
     # Paste each image onto the grid.
@@ -47,8 +53,8 @@ def main():
             image.thumbnail((THUMBNAIL_WIDTH, THUMBNAIL_HEIGHT))
             row = i // num_columns
             col = i % num_columns
-            x = col * THUMBNAIL_WIDTH
-            y = row * THUMBNAIL_HEIGHT
+            x = col * (THUMBNAIL_WIDTH + GAP) + MARGIN
+            y = row * (THUMBNAIL_HEIGHT + GAP) + MARGIN
             grid_image.paste(image, (x, y))
 
     # Save the grid image.
