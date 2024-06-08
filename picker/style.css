@@ -1,0 +1,89 @@
+/*[ Config ]***************************************************************************************/
+
+:root {
+	/* size is the height/width to display geets at. */
+	--size: 100px;
+}
+
+
+/*[ Reset ]****************************************************************************************/
+
+*,
+*::after,
+*::before {
+	border: 0;
+	box-sizing: inherit;
+	font-size: 100%;
+	font-style: inherit;
+	font-variant: none;
+	margin: 0;
+	padding: 0;
+	overflow: visible;
+	vertical-align: baseline;
+	overscroll-behavior: contain;
+}
+
+html {
+	-webkit-text-size-adjust: 100%;
+	-webkit-tap-highlight-color: transparent;
+}
+
+main {
+	display: block;
+}
+
+
+/*[ Toast Bar ]************************************************************************************/
+
+#toast-bar {
+	position: absolute;
+	bottom: 1em;
+	right: 2em;
+}
+
+#toast-bar p {
+	color: #fff;
+	background: rgba(0, 0, 0, .8);
+	margin: .5em 0 0 auto;
+	padding: .5em 1em;
+	border-radius: 3px;
+	width: fit-content;
+	font-family: sans-serif;
+
+	animation-duration: .25s;
+	animation-name: animate-fade-in;
+	animation-timing-function: ease-out;
+}
+
+@keyframes animate-fade-in {
+	0%   { opacity: 0; }
+	100% { opacity: 1; }
+}
+
+
+/*[ Main Style ]***********************************************************************************/
+
+html {
+	color: #fff;
+	background: #222;
+}
+
+main {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(var(--size), 1fr));
+	grid-template-rows: repeat(auto-fill, minmax(var(--size), 1fr));
+	place-items: center;
+	padding: 2em;
+	gap: .5em;
+}
+
+img {
+	height: var(--size);
+	width: var(--size);
+	transition: transform .05s ease-in;
+}
+
+/* Only enable zoom hover with JS to make manually copying pasting goots easier. */
+.js img:hover {
+	transform: scale(1.3);
+}
