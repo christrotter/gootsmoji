@@ -12,7 +12,7 @@ jobs:
   build:
 
     runs-on: ubuntu-latest
-
+    if: github.ref == 'refs/heads/main'
     steps:
       - uses: actions/checkout@v4
       - name: Set up Python
@@ -27,7 +27,6 @@ jobs:
 
       # We want to always regen the grid file; GHA does not make skipping based on file changes easy.
       - name: Update grid image
-        if: github.ref == 'refs/heads/main'
         run: |
           python build.py
           git rm --cached grid_image.png
