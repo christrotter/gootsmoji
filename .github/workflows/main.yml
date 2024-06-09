@@ -28,8 +28,8 @@ jobs:
       # We want to always regen the grid file; GHA does not make skipping based on file changes easy.
       - name: Update grid image
         run: |
+          rm grid_image.png
           python build.py
-          git rm --cached grid_image.png
           git add grid_image.png
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git config user.name "github-actions[bot]"
