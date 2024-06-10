@@ -105,7 +105,7 @@ def update_picker():
     img_tags = (
         IMG_TEMPLATE.format(
             src=os.path.join(rel_goots_path, filename),
-            name=os.path.basename(filename),
+            name=os.path.splitext(filename)[0],
         )
         for filename in image_files
     )
