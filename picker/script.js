@@ -34,7 +34,7 @@
 			Number of milliseconds to display the toast for.
 	**/
 	function toast(text, showMS = 3000) {
-		const msg = $(`<p>${text}</p>`);
+		const msg = $(`<p aria-role="alert">${text}</p>`);
 		$("#toast-bar").appendChild(msg);
 		setTimeout(msg.remove.bind(msg), showMS);
 	}
