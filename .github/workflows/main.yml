@@ -30,6 +30,11 @@ jobs:
       - name: Update built assets
         run: |
           python build.py
+          echo "What files changed today?"
+          find ./goots -mtime -1 -type f -print
+          echo "What does git status say?"
+          git status --porcelain
+          echo "Entering commit logic..."
           if ! git status --porcelain; then \
             git commit --all \
               --author='github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>' \
