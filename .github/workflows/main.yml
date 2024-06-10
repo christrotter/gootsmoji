@@ -30,10 +30,9 @@ jobs:
       - name: Update built assets
         run: |
           python build.py
-          if [[ -n "$(git status --porcelain)" ]]; then \
-            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-            git config user.name "github-actions[bot]"
-            git commit --all \
-              --message='Automatic Asset Rebuild'; \
-            git push; \
+          if [[ -n "$(git status --porcelain)" ]]; then
+            git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+            git config user.name 'github-actions[bot]'
+            git commit --all --message='Automatic Asset Rebuild'
+            git push
           fi
