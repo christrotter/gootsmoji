@@ -30,7 +30,7 @@ jobs:
       - name: Update built assets
         run: |
           python build.py
-          if ! git status --porcelain; then \
+          if [[ -n "$(git status --porcelain)" ]]; then \
             git commit --all \
               --author='github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>' \
               --message='Automatic Asset Rebuild'; \
