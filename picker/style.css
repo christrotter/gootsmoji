@@ -36,7 +36,10 @@ main {
 /*[ Toast Bar ]************************************************************************************/
 
 #toast-bar {
-	position: absolute;
+	position: fixed;
+	display: flex;
+	flex-direction: column;
+	width: calc(100% - 3em);
 	bottom: 1em;
 	right: 2em;
 }
@@ -45,6 +48,8 @@ main {
 	color: #fff;
 	background: rgba(0, 0, 0, .8);
 	margin: .5em 0 0 auto;
+	align-self: flex-end;
+	margin-top: .5em;
 	padding: .5em 1em;
 	border-radius: 3px;
 	width: fit-content;
