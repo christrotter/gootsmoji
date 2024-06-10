@@ -31,8 +31,9 @@ jobs:
         run: |
           python build.py
           if [[ -n "$(git status --porcelain)" ]]; then \
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git config user.name "github-actions[bot]"
             git commit --all \
-              --author='github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>' \
               --message='Automatic Asset Rebuild'; \
             git push; \
           fi
