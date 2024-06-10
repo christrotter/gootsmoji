@@ -49,7 +49,6 @@ main {
 	background: rgba(0, 0, 0, .8);
 	margin: .5em 0 0 auto;
 	align-self: flex-end;
-	margin-top: .5em;
 	padding: .5em 1em;
 	border-radius: 3px;
 	width: fit-content;
