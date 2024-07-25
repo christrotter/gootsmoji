@@ -56,7 +56,7 @@ FONT_SPREAD = 4
 def main():
     """Generate the wallpaper."""
     images = [
-        Image.open(os.path.join(IMAGE_SOURCE_DIR, filename))
+        Image.open(os.path.join(IMAGE_SOURCE_DIR, filename)).convert("RGBA")
         for filename in os.listdir(IMAGE_SOURCE_DIR)
         if filename.endswith(".png")
     ]
